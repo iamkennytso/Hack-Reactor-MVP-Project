@@ -5,9 +5,7 @@ let app = express();
 
 let port = 1203
 
-app.get('/', (req, res)=>{
-	res.render('index');
-});
+app.use(express.static(__dirname + '/../client/dist'));
 
 app.listen(port, function() {
 	console.log(`<('.'<) Server's up on your birthday port!`);

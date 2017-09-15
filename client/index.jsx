@@ -1,35 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import List from './components/List.jsx';
+import InputBox from './InputBox.jsx';
+import OutputBox from './OutputBox.jsx';
+//import leetify from './leetify.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      items: []
+      plain:'',
+      translated:''
     }
   }
 
   componentDidMount() {
-    $.ajax({
-      url: '/items', 
-      success: (data) => {
-        this.setState({
-          items: data
-        })
-      },
-      error: (err) => {
-        console.log('err', err);
+    this.setState(
+      {
+        plain:'leet',
+        translated:'1337'
       }
-    });
+    )
+    console.log('React Component Mounted.')
   }
 
   render () {
-    return (<div>
-      <h1>Item List</h1>
-      <List items={this.state.items}/>
-    </div>)
+    return (
+      <div>
+        <h1>Hello World!  </h1>
+        <InputBox text={this.state}/>
+        <br></br>
+        <OutputBox text={this.state} />
+      </div>
+    )
+  }
+
+  translate () {
+    console.log('translate', this.state.plain)
+    //leetify(this.state.plain)
   }
 }
 
