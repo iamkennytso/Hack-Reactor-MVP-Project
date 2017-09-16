@@ -4,7 +4,7 @@ import $ from 'jquery';
 import InputBox from './InputBox.jsx';
 import OutputBox from './OutputBox.jsx';
 import leetify from './leetify.jsx';
-import RecentLeeteds from './recentLeeteds.jsx'
+import RecentLeeteds from './recentLeeteds.jsx';
 import axios from 'axios';
 
 class App extends React.Component {
@@ -12,7 +12,8 @@ class App extends React.Component {
     super(props);
     this.state = { 
       plain:'',
-      translated:''
+      translated:'',
+      recent5:[]
     }
   }
 
@@ -20,10 +21,11 @@ class App extends React.Component {
     this.setState(
       {
         plain:'leet',
-        translated:'1337'
+        translated:'1337',
+        recent5:[]
       }
     )
-    axois.get('/recent5leeted')
+    this.getRecentLeeteds();
 //console.log('React Component Mounted.')
   }
 
@@ -31,28 +33,36 @@ class App extends React.Component {
     return (
       <div>
         <h1>\v/31C0M3 n00Bz</h1>
-        <InputBox text={this.state} translate = {this.translate.bind(this)}/>
+        <InputBox text = {this.state} translate = {this.translate.bind(this)}/>
         <br></br>
-        <OutputBox text={this.state} />
+        <OutputBox text = {this.state} />
         <br></br>
-
+        <RecentLeeteds text = {this.state} />
       </div>
     )
   }
   
-  // <RecentLeeteds list={this.getRecentLeeteds.bind(this)} />
-  // getRecentLeeteds() {
-  //   return axios.post('/leetify', {
-  //     data: props
-  //   })
-  //   .then(function (response) {
-  // //console.log('axios', response.data)
-  //     return(response.data);
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   });
-  // }
+  getRecentLeeteds() {
+//console.log('getRecentlLeeteds')
+    axios.get('/recent5leeted')
+    .then( (response) => {
+//console.log(response)
+      var array = [];
+      response.data.forEach( (obj) => {
+        array.push(obj.leeted)
+      })
+//console.log(this)
+      this.setState({
+        recent5:array
+      })
+      // console.log('this.state', this.state)
+      // console.log('this.state.recent5', this.state.recent5)
+      // console.log('this.state.recent5[0]', this.state.recent5[0])
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
 
 
   translate (input) {
@@ -64,6 +74,7 @@ class App extends React.Component {
         translated: leeted
       })
     })
+    this.getRecentLeeteds();
   }
 }
 

@@ -12,14 +12,29 @@ h1{
 h3{
     font-family: helvetica;
 }
+
 body {
     background-image: url("background.jpg");
 }
+
+.recent5div{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.recent5span {
+    border: 1px solid black;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
 #app{
   padding-left: 15px;
   padding-right:15px;
   margin:auto;
-  width:50%;
+  width:500px;
   top: 50%;
   border: 6px solid #BD0B0B;
   border-style: outset;

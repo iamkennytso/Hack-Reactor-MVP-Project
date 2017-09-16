@@ -17,9 +17,12 @@ app.listen(port, function() {
 app.get('/recent5leeted', function(req,res){
 	console.log('recent5leeted entered')
 	translatedStorage.find( {}, (err, win) => {
-		if(err) console.error('error', err);
-		else console.log('win', win);
-		res.send(win)
+		if(err){
+		  console.error('error', err);
+		} else {
+		  console.log('recent 5 win')
+		  res.send(win)
+		}
 	}).limit(5).sort('-created_at')
 })
 
@@ -35,9 +38,9 @@ app.post('/leetify', function(req, res){
     body: { text: plain },
 	json: true };
 	
-	//CHOOSE CAREFULLY YOU PLEB
+	//WARNING. ONLY 5 API CALLS AN HOUR, HOUR STARTS AFTER 5TH API CALL.
 
-	translatedStorage.create({leeted:'7357 Data cuz we need one more'}, (err)=> {
+	translatedStorage.create({leeted:'7]-[!rD test data'}, (err)=> {
 		if(err)console.log(err);
 	});
 	res.send('7357 Data')
