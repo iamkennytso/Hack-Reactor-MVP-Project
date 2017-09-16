@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "cs": "webpack -d --watch",
-    "start": "nodemon server/index.js"
+    "start": "node server/index.js"
   },
   "author": "Kenneth Tso | iamkennytso@gmail.com",
   "repository": "https://github.com/iamkennytso/Hack-Reactor-MVP-Project",
