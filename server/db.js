@@ -1,4 +1,3 @@
-const cred = require('./cred')
 const mongoose = require('mongoose');
 const MongoClient = require('mongodb')
 
