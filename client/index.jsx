@@ -73,8 +73,8 @@ class App extends React.Component {
         plain: input,
         translated: leeted
       })
-    })
     this.getRecentLeeteds();
+    })
   }
 }
 
