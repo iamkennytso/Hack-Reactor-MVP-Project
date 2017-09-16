@@ -4,7 +4,6 @@ const bodyParser = require('body-parser')
 const request = require('request')
 const translatedStorage = require ('./leetedStorageModel')
 let app = express();
-
 let port = 1203
 
 app.use(express.static(__dirname + '/../client/dist'));
