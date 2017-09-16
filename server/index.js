@@ -38,20 +38,20 @@ app.post('/leetify', function(req, res){
 	
 	//WARNING. ONLY 5 API CALLS AN HOUR, HOUR STARTS AFTER 5TH API CALL.
 
-	// translatedStorage.create({leeted:'7]-[!rD test data'}, (err)=> {
-	// 	if(err)console.log(err);
-	// });
-	// res.send('7357 Data')
+	translatedStorage.create({leeted:'7]-[!rD test data'}, (err)=> {
+		if(err)console.log(err);
+	});
+	res.send('7357 Data')
 
-    request(options, function (error, response, body) {
-	  if (error){
-		console.error(error)
-	  } else {
-	    translatedStorage.create({leeted:body.contents.translated}, (err)=> {
-		     if(err)console.log(err);
-	    });
-	    res.send(body.contents.translated)
-	  }
-    });
+    // request(options, function (error, response, body) {
+	//   if (error){
+	// 	console.error(error)
+	//   } else {
+	//     translatedStorage.create({leeted:body.contents.translated}, (err)=> {
+	// 	     if(err)console.log(err);
+	//     });
+	//     res.send(body.contents.translated)
+	//   }
+    // });
 
 })
