@@ -13,12 +13,12 @@ app.listen(port, function() {
 })
 
 app.get('/recent5leeted', function(req,res){
-	console.log('recent5leeted entered')
+//console.log('recent5leeted entered')
 	translatedStorage.find( {}, (err, win) => {
 		if(err){
 		  console.error('error', err);
 		} else {
-		  console.log('recent 5 win')
+//console.log('recent 5 win')
 		  res.send(win)
 		}
 	}).limit(5).sort('-created_at')
@@ -30,8 +30,7 @@ app.post('/leetify', function(req, res){
 	var options = { method: 'POST',
     url: 'http://api.funtranslations.com/translate/leetspeak',
     headers: 
-     {
-     'cache-control': 'no-cache',
+     {'cache-control': 'no-cache',
      'content-type': 'application/json' },
     body: { text: plain },
 	json: true };

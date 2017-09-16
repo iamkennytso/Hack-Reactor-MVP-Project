@@ -7,6 +7,7 @@
 }
 
 h1{
+    text-align: center;
     font-family: verdana;
 }
 h3{
@@ -28,6 +29,14 @@ body {
     padding-top: 2px;
     padding-left: 8px;
     padding-right: 8px;
+}
+
+#warning{
+    color:red;
+    font-weight: bold;
+    font-family:"impact";
+    font-size: 125%;
+    text-align: center
 }
 
 #app{

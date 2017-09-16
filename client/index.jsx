@@ -32,12 +32,14 @@ class App extends React.Component {
   render () {
     return (
       <div>
+        
         <h1>\v/31C0M3 n00Bz</h1>
         <InputBox text = {this.state} translate = {this.translate.bind(this)}/>
         <br></br>
         <OutputBox text = {this.state} />
         <br></br>
         <RecentLeeteds text = {this.state} />
+        <div id='warning'>Warning: Current API limits 5 translations an hour.</div>
       </div>
     )
   }
@@ -55,9 +57,9 @@ class App extends React.Component {
       this.setState({
         recent5:array
       })
-      // console.log('this.state', this.state)
-      // console.log('this.state.recent5', this.state.recent5)
-      // console.log('this.state.recent5[0]', this.state.recent5[0])
+// console.log('this.state', this.state)
+// console.log('this.state.recent5', this.state.recent5)
+// console.log('this.state.recent5[0]', this.state.recent5[0])
     })
     .catch(function (error) {
       console.log(error);
