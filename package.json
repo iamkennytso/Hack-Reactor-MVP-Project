@@ -1,13 +1,14 @@
 {
-  "name": "MVP_Project",
+  "name": "MVPProject",
   "version": "1.0.0",
   "description": "1337 speak translator",
   "main": "server/index.js",
   "scripts": {
     "cs": "webpack -d --watch",
-    "ss": "nodemon server/index.js"},
+    "ss": "nodemon server/index.js"
+  },
   "author": "Kenneth Tso | iamkennytso@gmail.com",
-  "repository" : "https://github.com/iamkennytso/Hack-Reactor-MVP-Project",
+  "repository": "https://github.com/iamkennytso/Hack-Reactor-MVP-Project",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -17,11 +18,13 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.17.0",
     "express": "^4.15.0",
     "jquery": "^3.1.1",
     "mongoose": "^4.9.6",
-    "react": "^15.4.2",
+    "react": "^15.6.1",
+    "react-copy-to-clipboard": "^5.0.0",
     "react-dom": "^15.4.2",
     "request": "^2.81.0"
   }
