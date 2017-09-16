@@ -30,7 +30,7 @@ app.post('/leetify', function(req, res){
 	var options = { method: 'POST',
     url: 'http://api.funtranslations.com/translate/leetspeak',
     headers: 
-     { 'postman-token': '4bf5ad0d-b6f4-f9a4-411f-c97d1408d0ee',
+     {
      'cache-control': 'no-cache',
      'content-type': 'application/json' },
     body: { text: plain },
@@ -47,7 +47,7 @@ app.post('/leetify', function(req, res){
 	  if (error){
 		console.error(error)
 	  } else {
-	    translatedStorage.create({leeted:'body.contents.translated'}, (err)=> {
+	    translatedStorage.create({leeted:body.contents.translated}, (err)=> {
 		     if(err)console.log(err);
 	    });
 	    res.send(body.contents.translated)
