@@ -6,7 +6,7 @@ const InputBox = (props) => (
     <form onSubmit = { (event)=>{
       event.preventDefault();
       let input = document.getElementById("plainField").value
-      console.log('input form submitted', input);
+//console.log('input form submitted', input);
       props.text.plain = input;
       props.translate(input);
       }}>

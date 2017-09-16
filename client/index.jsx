@@ -21,7 +21,7 @@ class App extends React.Component {
         translated:'1337'
       }
     )
-    console.log('React Component Mounted.')
+//console.log('React Component Mounted.')
   }
 
   render () {
@@ -38,7 +38,7 @@ class App extends React.Component {
   translate (input) {
     var leeted = leetify(input)
     leeted.then( (leeted) => {
-      console.log('promise', leeted)
+//console.log('promise', leeted)
       this.setState({
         plain: input,
         translated: leeted

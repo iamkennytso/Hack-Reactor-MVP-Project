@@ -26,18 +26,18 @@ app.post('/leetify', function(req, res){
 	json: true };
 	
 	//CHOOSE CAREFULLY YOU PLEB
+
+
+	// res.send('fjeklwqfjklqewfeqw')
 	
 
-	res.send('fjeklwqfjklqewfeqw')
-	
-
-    // request(options, function (error, response, body) {
-	//   if (error){
-	// 	  console.error(error)
-	//   } else {
-	//     console.log('body', body.contents.translated);
-	//     res.send(body.contents.translated)
-	//   }
-    // });
+    request(options, function (error, response, body) {
+	  if (error){
+		console.error(error)
+	  } else {
+	    console.log('body', body.contents.translated);
+	    res.send(body.contents.translated)
+	  }
+    });
 
 })
