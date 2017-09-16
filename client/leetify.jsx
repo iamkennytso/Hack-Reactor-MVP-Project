@@ -1,9 +1,7 @@
 import React from 'react';
-import $ from 'jquery';
 import axios from 'axios';
 
 const leetify = (props) => {
-  let url = '127.0.0.1:1203/leetify';
 
   return axios.post('/leetify', {
     data: props

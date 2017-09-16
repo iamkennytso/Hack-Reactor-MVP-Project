@@ -4,6 +4,8 @@ import $ from 'jquery';
 import InputBox from './InputBox.jsx';
 import OutputBox from './OutputBox.jsx';
 import leetify from './leetify.jsx';
+import RecentLeeteds from './recentLeeteds.jsx'
+import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,19 +23,37 @@ class App extends React.Component {
         translated:'1337'
       }
     )
+    axois.get('/recent5leeted')
 //console.log('React Component Mounted.')
   }
 
   render () {
     return (
       <div>
-        <h1>W3lC0M3 n00B</h1>
+        <h1>\v/31C0M3 n00Bz</h1>
         <InputBox text={this.state} translate = {this.translate.bind(this)}/>
         <br></br>
         <OutputBox text={this.state} />
+        <br></br>
+
       </div>
     )
   }
+  
+  // <RecentLeeteds list={this.getRecentLeeteds.bind(this)} />
+  // getRecentLeeteds() {
+  //   return axios.post('/leetify', {
+  //     data: props
+  //   })
+  //   .then(function (response) {
+  // //console.log('axios', response.data)
+  //     return(response.data);
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   });
+  // }
+
 
   translate (input) {
     var leeted = leetify(input)
